@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class Main {
     static Matrix matrix = new Matrix();
     public static void main(String[] args) throws InterruptedException {
-        initialization();
+        init();
         mathOperation();
         matrixOutput();
 
     }
-    public static void initialization() throws InterruptedException {
+    public static void init() throws InterruptedException {
         System.out.println(" - Welcome to the Square Matrix Calculator 2.0 - ");
         System.out.println();
         Thread.sleep(500);
@@ -17,9 +17,9 @@ public class Main {
         int matrixSize = matrices.nextInt();
         System.out.println();
         matrix.setSize(matrixSize);
-        matrix.initialisationFirstMatrix();
+        matrix.initFirstMatrix();
         System.out.println();
-        matrix.initialisationSecondMatrix();
+        matrix.initSecondMatrix();
         System.out.println();
     }
 

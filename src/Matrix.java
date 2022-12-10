@@ -18,25 +18,8 @@ public class Matrix {
         return size;
     }
 
-    public void initialisationFirstMatrix(){
+    public void initMatrix(int[][] matrix){
         Scanner a = new Scanner(System.in);
-        System.out.println("Enter separated by a space numbers of first, second etc. strings of the first matrix ...");
-        for(int i = 0; i < size; i ++){
-            String[] box = new String[size];
-            Integer[] intBox = new Integer[size];
-            System.out.print(" -> ");
-            box = a.nextLine().split(" ");
-            for (int j = 0; j < box.length; j++) {
-                intBox[j] = Integer.parseInt(box[j]);
-            }
-            for(int q = 0; q < intBox.length; q ++){
-                matrix1[i][q] = intBox[q];
-            }
-        }
-    }
-    public void initialisationSecondMatrix(){                           //Знаю, что копи паст не очень, но нам нужно сделать
-        Scanner a = new Scanner(System.in);                             //такую же матрицу, так что я просто скопировал код
-        System.out.println("Enter separated by a space numbers of first, second etc. strings of the second matrix ...");
         for(int i = 0; i < size; i ++) {
             String[] box = new String[size];
             Integer[] intBox = new Integer[size];
@@ -46,10 +29,22 @@ public class Matrix {
                 intBox[j] = Integer.parseInt(box[j]);
             }
             for (int q = 0; q < intBox.length; q++) {
-                matrix2[i][q] = intBox[q];
+                matrix[i][q] = intBox[q];
             }
         }
     }
+
+    public void initFirstMatrix(){
+        System.out.println("Enter separated by a space numbers of first, second etc. strings of the second matrix ...");
+        initMatrix(matrix1);
+    }
+
+    public void initSecondMatrix(){
+        System.out.println("Enter separated by a space numbers of second, second etc. strings of the second matrix ...");
+        initMatrix(matrix2);
+    }
+
+
     public void multiplication(){
         int[][] matrix2T = new int[size][size];        // <-         Транспонируем вторую матрицу,
         for (int i = 0; i < size; i++) {               // <-       (просто меняем строки на столбцы, можно сказать, переворачиваем),
